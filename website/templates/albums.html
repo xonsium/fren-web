@@ -1,0 +1,9 @@
+{% extends "min_base.html" %} {% block head %}
+{% endblock head %} {% block body %}
+
+{% for key, value in json_albums.items() %}
+        {% set title = value.split('/')[-1] %}
+        <li><a href="{{ url_for('views.album', a=key) }}">{{ title }}</a></li>
+{% endfor %}
+
+{% endblock body %}

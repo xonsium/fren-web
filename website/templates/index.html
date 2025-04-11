@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block head %}
+{% endblock head %} {% block body %}
+<h2><a href="">$</a> exiftool -s Faridin_Islam.mp4</h2>
+
+<section class="info-section">
+    <div class="label">FileName:</div>
+    <div class="value">Faridin_Islam</div>
+
+    <div class="label">Directory:</div>
+    <div class="value">/home/fren/Docs</div>
+
+    <div class="label">FileModifyDate:</div>
+    <div class="value">{{current_date}}</div>
+
+    <div class="label">FilePermissions:</div>
+    <div class="value">r--r--r--</div>
+
+    
+    <div class="label">Duration:</div>
+    <div class="value">{{duration}}</div>
+
+    <div class="label">PreferredVolume:</div>
+    <div class="value">60%</div>
+
+    <div class="label">Views:</div>
+    <div class="value">My Own</div>
+
+    
+
+</section>
+
+
+
+<h3>Small websites/projects</h3>
+<ul>
+    <li><a target="_blank" href="https://xonsium.github.io/waifu-nft/">Waifu NFT</a></li>
+    <li><a target="_blank" href="https://periodic-table-gilt.vercel.app/">Chem? Periodic Table</a></li>
+    <li><a target="_blank" href="https://github.com/xonsium/NDC-notice-bot">NDC Notice Bot</a></li>
+    <li><a target="_blank" href="https://github.com/xonsium/greyboard">Greyboard</a></li>
+    <li><a target="_blank" href="https://github.com/xonsium/NoAuth">NoAuth Spotify Api</a></li>
+</ul>
+
+<h3>Blog entries</h3>
+<ul>
+    {% for key, value in blogs.items() %}
+        {% set title = value.split('/')[-1] %}
+        <li><a href="{{ url_for('views.blog', b=key) }}">{{ title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h3>Miscellaneous</h3>
+<ul>
+    <li><a href="{{ url_for('views.alp') }}">Album Picks</a></li>
+</ul>
+
+
+{% endblock body %}

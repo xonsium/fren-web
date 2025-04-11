@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>Xons Website</title>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="container">
+        <header style="text-align: center;">
+            <div class="navbar">
+                <a href="{{url_for('views.home')}}" class="nav-link">[ Home ]</a>
+                <a href="{{url_for('views.about')}}" class="nav-link">[ About ]</a>
+                <a href="{{url_for('views.contact')}}" class="nav-link">[ Contact ]</a>
+                <a href="https://github.com/xonsium" target="_blank" class="nav-link">[ Github ]</a>
+            </div>
+        </header>
+        <hr style="margin-bottom: 20px;">
+        {% block body %}
+        {{ blog_content|safe }}
+        {% endblock %}
+        <footer>
+          <p>Author: Faridin Islam</p>
+          <p>Email: <a href="mailto:xonsium@tfwno.gf">xonsium@tfwno.gf</a></p>
+        </footer>
+  </body>
+  
+</html>

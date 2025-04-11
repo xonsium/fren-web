@@ -1,0 +1,29 @@
+{% extends "min_base.html" %} {% block head %}
+{% endblock head %} {% block body %}
+
+<main style="text-align: center;">
+  <h2>{{ al.title }}</h2>
+
+  <div class="album">
+
+    <img src="{{ al.cover }}" alt="cover">
+    <div class="album-info">
+
+      <span class="info-field">Released: {{ al.released }}</span>
+      <span class="info-field">Artist: {{ al.artist }}</span>
+      <span class="info-field">Label: {{ al.label }}</span>
+      <span class="info-field"> Tracks:
+        <ul>  
+          {% for track in al.tracks %}
+          <li>{{ track }}</li>
+          {% endfor %}
+        </ul>
+      </span>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock body %}
