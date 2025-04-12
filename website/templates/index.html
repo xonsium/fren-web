@@ -1,32 +1,35 @@
 {% extends "base.html" %} {% block head %}
 {% endblock head %} {% block body %}
-<h2><a href="">$</a> exiftool -s Faridin_Islam.mp4</h2>
 
 <section class="info-section">
-    <div class="label">FileName:</div>
-    <div class="value">Faridin_Islam</div>
-
-    <div class="label">Directory:</div>
-    <div class="value">/home/fren/Docs</div>
-
-    <div class="label">FileModifyDate:</div>
-    <div class="value">{{current_date}}</div>
-
-    <div class="label">FilePermissions:</div>
-    <div class="value">r--r--r--</div>
-
-    
-    <div class="label">Duration:</div>
-    <div class="value">{{duration}}</div>
-
-    <div class="label">PreferredVolume:</div>
-    <div class="value">60%</div>
-
-    <div class="label">Views:</div>
-    <div class="value">My Own</div>
-
-    
-
+    <div>
+        <img id="profile" src="https://upload.wikimedia.org/wikipedia/en/7/76/Avenged_Sevenfold_cover_2007.jpg" alt="">
+    </div>
+    <section class="info">
+        <div class="social">
+            <span>Name</span>
+            <span class="separator"></span>
+            <span>Faridin Islam</span>
+        </div>
+        <div class="social">
+            <span>Age</span>
+            <span class="separator"></span>
+            <span>17 yrs</span>
+        </div>
+        <div class="social">
+            <span>Hobbies</span>
+            <span class="separator"></span>
+            <span>
+                <a class="info-link" target="_blank" href="https://www.instagram.com/faridin.iz">Guitar</a>,
+                <a class="info-link" target="_blank" href="https://github.com/xonsium">Coding</a>
+            </span>
+        </div>
+        <div class="social">
+            <span>Views</span>
+            <span class="separator"></span>
+            <span>My Own</span>
+        </div>
+    </section>
 </section>
 
 
@@ -43,8 +46,8 @@
 <h3>Blog entries</h3>
 <ul>
     {% for key, value in blogs.items() %}
-        {% set title = value.split('/')[-1] %}
-        <li><a href="{{ url_for('views.blog', b=key) }}">{{ title }}</a></li>
+    {% set title = value.split('/')[-1] %}
+    <li><a href="{{ url_for('views.blog', b=key) }}">{{ title }}</a></li>
     {% endfor %}
 </ul>
 
